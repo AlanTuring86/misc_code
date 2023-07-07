@@ -1,0 +1,105 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{tikz}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{tabularray}
+\usepackage{array}
+
+\title{The game of life}
+\author{}
+\date{\today}
+
+\begin{document}
+
+
+\section{Le jeu de la vie}
+
+Le jeu de la vie est un jeu de simulation de la vie créé par le mathématicien britannique John Horton Conway en 1970. Il est basé sur une grille de cellules qui peuvent être vivantes ou mortes. Les cellules sont régies par des règles simples qui déterminent leur état à chaque tour. Le jeu est considéré comme un modèle de la théorie des systèmes complexes et est étudié en mathématiques, en informatique et en biologie.
+
+Le jeu est joué sur une grille carrée de cellules qui peuvent être vivantes ou mortes. Chaque cellule a 8 voisins, qui sont les cellules adjacentes à elle sur la grille. À chaque tour, l'état des cellules est mis à jour en fonction des règles suivantes :
+
+\begin{itemize}
+    \item Si une cellule morte a exactement 3 voisins vivants, elle devient vivante (naissance).
+    \item Si une cellule vivante a 2 ou 3 voisins vivants, elle reste vivante (survie).
+    \item Dans tous les autres cas, la cellule meurt (mort par isolement ou surpopulation).
+\end{itemize}
+
+Le jeu est considéré comme un modèle de la théorie des systèmes complexes et est étudié en mathématiques, en informatique et en biologie. Il est également utilisé comme un outil pédagogique pour enseigner les principes de la programmation et de la logique.
+
+\section{Glider}
+
+Un glider est un objet qui se déplace à travers la grille du jeu de la vie. Il est initialisé avec une configuration spécifique de cellules vivantes et mortes et se déplace à travers la grille à chaque tour. Les gliders sont considérés comme l'un des objets les plus intéressants du jeu de la vie, car ils peuvent être utilisés pour construire des structures plus complexes.
+
+Un glider est initialisé avec une configuration de 5 cellules vivantes et mortes. Les cellules vivantes sont représentées par des 1 et les cellules mortes par des 0. La configuration initiale d'un glider est la suivante :
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+0 & 0 & 1 & 0 & 0 \\
+\hline
+1 & 0 & 0 & 1 & 0 \\
+\hline
+0 & 1 & 1 & 1 & 0 \\
+\hline
+0 & 0 & 0 & 0 & 0 \\
+\hline
+0 & 0 & 0 & 0 & 0 \\
+\hline
+\end{tabular}
+\end{center}
+
+Le glider se déplace à travers la grille à chaque tour, en se déplaçant d'une cellule à la fois. Il se déplace dans la même direction à chaque tour et peut être utilisé pour construire des structures plus complexes.
+
+\section{Exercice}
+
+L'objectif de cet exercice est d'utiliser le langage de programmation Matlab pour initialiser un glider et le faire se déplacer à travers la grille du jeu de la vie.
+
+\subsection{Initialisation du glider}
+
+Le premier pas pour initialiser un glider est de créer une grille carrée de cellules vivantes et mortes. Vous pouvez le faire en utilisant la fonction \texttt{zeros} de Matlab. Par exemple, pour créer une grille de 10x10 cellules, vous pouvez utiliser la commande suivante :
+
+\begin{verbatim}
+grid = zeros(10, 10);
+\end{verbatim}
+
+Une fois que vous avez créé la grille, vous pouvez initialiser le glider en définissant les cellules vivantes et mortes. Vous pouvez le faire en utilisant la fonction \texttt{find} de Matlab. Par exemple, pour initialiser le glider à la position (3,3), vous pouvez utiliser la commande suivante :
+
+\begin{verbatim}
+[row, col] = find(grid == 0);
+grid(row(3), col(3)) = 1;
+grid(row(4), col(4)) = 1;
+grid(row(5), col(5)) = 1;
+grid(row(7), col(7)) = 1;
+grid(row(8), col(8)) = 1;
+\end{verbatim}
+
+\subsection{Déplacement du glider}
+
+Une fois que le glider est initialisé, vous pouvez le faire se déplacer à travers la grille. Vous pouvez le faire en appliquant les règles du jeu de la vie à chaque tour. Vous pouvez le faire en utilisant la fonction \texttt{for} de Matlab. Par exemple, pour faire se déplacer le glider à chaque tour, vous pouvez utiliser la commande suivante :
+
+\begin{verbatim}
+for i = 1:10
+    % Appliquer les règles du jeu de la vie
+    % Déplacer le glider
+end
+\end{verbatim}
+
+Vous pouvez déplacer le glider en utilisant la fonction \texttt{shift} de Matlab. Par exemple, pour le déplacer d'une cellule à la fois, vous pouvez utiliser la commande suivante :
+
+\begin{verbatim}
+grid = shift(grid, 1, 0);
+\end{verbatim}
+
+Vous pouvez également déplacer le glider dans d'autres directions en utilisant des valeurs différentes pour les paramètres \texttt{x} et \texttt{y}.
+
+\subsection{Hints}
+
+\begin{itemize}
+    \item Utilisez la fonction \texttt{zeros} pour créer la grille.
+    \item Utilisez la fonction \texttt{find} pour initialiser le glider.
+    \item Utilisez la fonction \texttt{for} pour appliquer les règles du jeu de la vie à chaque tour.
+    \item Utilisez la fonction \texttt{shift} pour déplacer le glider.
+\end{itemize}
+
+\end{document}

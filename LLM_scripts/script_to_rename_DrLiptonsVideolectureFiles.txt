@@ -1,0 +1,22 @@
+I have a bunch of video files from 56 lectures given by Dr Lipton. Each file contains the lecture number in a format like "1 of 56" or "2 of 56" ... something like that, and I want you to write a bash script that will rename each of these files such that when I order them by name they are ordered with respect to the lecture number. I also want that the other part of the filename is kept intact, just take care that the lecture numbers are at the start of the filename in such a way that these files can be ordered by name following increasing lecture numbers. Use only 7 bit ASCII characters.
+
+
+#!/bin/bash
+
+# Script to rename video files by lecture number
+
+# Set current directory
+cd /path/to/files/
+
+# Loop through files in the current directory
+for f in *; do
+  # Find the lecture number
+  lecture_number=$(echo $f | grep -o -E '[0-9]+ of 56')
+  
+  # Get the other part of the filename
+  rest_of_filename=$(echo $f | sed -e "s/$lecture_number//")
+  
+  # Rename the file
+  mv "$f" "${lecture_number}_${rest_of_filename}"
+  
+done
