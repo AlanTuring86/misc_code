@@ -1,79 +1,81 @@
 # Ignore everything
 *
-!*/
-!**/*
 
-# But not these files...
+# Do not ignore directories
+!*/
+
+# Do not ignore .gitignore file
 !.gitignore
-!*.txt
-!*.md
+
+# Specific file types not to ignore
+!**/*.txt
+!**/*.md
 
 # C/C++
-!*.c
-!*.h
-!*.cpp
-!*.hpp
-!*.cc
-!*.hh
+!**/*.c
+!**/*.h
+!**/*.cpp
+!**/*.hpp
+!**/*.cc
+!**/*.hh
 
 # Python
-!*.py
+!**/*.py
 
 # JavaScript / TypeScript
-!*.js
-!*.ts
-!*.jsx
-!*.tsx
-!*.html
-!*.css
-!*.json
+!**/*.js
+!**/*.ts
+!**/*.jsx
+!**/*.tsx
+!**/*.html
+!**/*.css
+!**/*.json
 
 # Java
-!*.java
+!**/*.java
 
 # C#
-!*.cs
+!**/*.cs
 
 # Objective-C
-!*.m
-!*.mm
+!**/*.m
+!**/*.mm
 
 # Swift
-!*.swift
+!**/*.swift
 
 # Ruby
-!*.rb
+!**/*.rb
 
 # Perl
-!*.pl
-!*.pm
+!**/*.pl
+!**/*.pm
 
 # PHP
-!*.php
+!**/*.php
 
 # Rust
-!*.rs
+!**/*.rs
 
 # Go
-!*.go
+!**/*.go
 
 # Shell/Bash scripts
-!*.sh
-!*.bash
+!**/*.sh
+!**/*.bash
 
 # SQL
-!*.sql
+!**/*.sql
 
 # R / Rmd
-!*.R
-!*.Rmd
+!**/*.R
+!**/*.Rmd
 
 # MATLAB
-!*.m
+!**/*.m
 
 # Other text files
-!*.csv
-!*.xml
-!*.yml
-!*.yaml
-# add any other file extensions that you want to include in the git repository.
+!**/*.csv
+!**/*.xml
+!**/*.yml
+!**/*.yaml
